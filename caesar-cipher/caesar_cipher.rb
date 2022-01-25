@@ -4,21 +4,14 @@ def caesar_cipher (text, shift=13)
 end
 
 def get_codes(text, shift)
-  upBase = 'A'.ord
-  dowBase = 'a'.ord
-
   text.chars.map do |char|
-
-    if char.ord.between?(97, 122)
-      get_shift(char.ord, dowBase, shift)
-    elsif char.ord.between?(65, 90)
-      get_shift(char.ord, upBase, shift)
+    if char.ord.between?(97, 122) || char.ord.between?(65, 90)
+      base = char.ord.between?(97, 122) ? 97 : 65
+      get_shift(char.ord, base, shift)
     else
       char.ord
     end
-    
   end
-
 end
 
 def get_shift(ord, base, shift)
