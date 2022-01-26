@@ -1,4 +1,4 @@
-def new_bubble_sort(array)
+def bubble_sort(array)
   max_len = array.length - 2
   sorted = false
   
