@@ -1,10 +1,7 @@
-def substrings(text, substrings) 
-  text.split.reduce(Hash.new(0)) do |result, word|
+def substrings(text, substrings)
+  text.split.each_with_object(Hash.new(0)) do |word, result|
     substrings.each do |substr|
-      if word.match?(substr)
-        result[substr] += 1
-      end
+      result[substr] += 1 if word.match?(substr)
     end
-    result
   end
 end

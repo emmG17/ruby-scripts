@@ -1,6 +1,6 @@
-def caesar_cipher (text, shift=13)
+def caesar_cipher(text, shift = 13)
   codes = get_codes(text, shift)
-  codes.map {|code| code.chr } .join('')
+  codes.map(&:chr).join('')
 end
 
 def get_codes(text, shift)
